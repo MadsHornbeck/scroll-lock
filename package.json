@@ -1,0 +1,32 @@
+{
+  "name": "@hornbeck/scroll-lock",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Mads Hornbeck",
+    "email": "madshornbeck@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MadsHornbeck/react-modals.git"
+  },
+  "keywords": [
+    "scroll-lock",
+    "scroll",
+    "lock",
+    "disable",
+    "overflow",
+    "react"
+  ],
+  "module": "index.js",
+  "sideEffects": false,
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "files": [
+    "index.js"
+  ]
+}
