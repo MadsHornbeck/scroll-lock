@@ -8,9 +8,7 @@ export function useScrollLock(lock) {
 
 export function scrollLock() {
   const scrollTop = window.pageYOffset;
-  const html = document.documentElement;
-  const scrollbarWidth =
-    html.offsetHeight > window.innerHeight ? getScrollbarWidth() : 0;
+  const scrollbarWidth = getScrollbarWidth();
   const style = {
     overflow: "hidden",
     position: "fixed",
@@ -35,6 +33,7 @@ function setHtmlStyle(style) {
 
 let scrollbarWidth;
 function getScrollbarWidth() {
+  if (document.documentElement.offsetHeight <= window.innerHeight) return 0;
   if (scrollbarWidth !== void 0) return scrollbarWidth;
   const el = document.createElement("div");
   el.style.position = "absolute";
