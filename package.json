@@ -1,6 +1,6 @@
 {
   "name": "@hornbeck/scroll-lock",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "author": {
     "name": "Mads Hornbeck",
@@ -21,6 +21,7 @@
     "overflow",
     "react"
   ],
+  "main": "index.cjs",
   "module": "index.js",
   "sideEffects": false,
   "peerDependencies": {
