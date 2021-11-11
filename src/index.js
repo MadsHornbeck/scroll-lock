@@ -18,7 +18,11 @@ export function scrollLock() {
   const prevStyle = setHtmlStyle(style);
   return () => {
     setHtmlStyle(prevStyle);
-    window.scroll(0, scrollTop);
+    window.scroll({
+      behavior: "instant",
+      left: 0,
+      top: scrollTop,
+    });
   };
 }
 
