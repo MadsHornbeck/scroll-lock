@@ -6,7 +6,11 @@ export function useScrollLock(lock) {
   }, [lock]);
 }
 
+let count = 0;
+let unlock;
+
 export function scrollLock() {
+  if (count++) return unlock;
   const scrollTop = window.pageYOffset;
   const scrollbarWidth = getScrollbarWidth();
   const style = {
@@ -16,14 +20,16 @@ export function scrollLock() {
     width: `calc(100% - ${scrollbarWidth}px)`,
   };
   const prevStyle = setHtmlStyle(style);
-  return () => {
+  return (unlock = () => {
+    if (--count) return;
     setHtmlStyle(prevStyle);
     window.scroll({
       behavior: "instant",
       left: 0,
       top: scrollTop,
     });
-  };
+    unlock = null;
+  });
 }
 
 function setHtmlStyle(style) {
